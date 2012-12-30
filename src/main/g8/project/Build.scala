@@ -16,15 +16,23 @@ object General {
     useProguard in Android := $useProguard$
   )
 
+  // RoboSpecs
+  val bddSettings = Seq(
+    resolvers += "jbrechtel snapshots" at "http://jbrechtel.github.com/repo/snapshots",
+    libraryDependencies += "com.github.jbrechtel" %% "robospecs" % "$robospecs_version$" % "test",
+    parallelExecution in Test := false,
+    testOptions in Test += Tests.Argument("sequential")
+  )
+
   lazy val fullAndroidSettings =
     General.settings ++
     AndroidProject.androidSettings ++
     TypedResources.settings ++
     proguardSettings ++
+    bddSettings ++
     AndroidManifestGenerator.settings ++
     AndroidMarketPublish.settings ++ Seq (
-      keyalias in Android := "change-me",
-      libraryDependencies += "org.scalatest" %% "scalatest" % "$scalatest_version$" % "test"
+      keyalias in Android := "change-me"
     )
 }
 

@@ -1,7 +1,7 @@
 # Android App in Scala
 
 [giter8](http://github.com/n8han/giter8) template to get an Android
-sbt project up and running in a matter of seconds
+Set a Scala-based Android project up in a matter of seconds. BDD is possible through Specs2, installed as a plugin.
 
 ## How to use
 

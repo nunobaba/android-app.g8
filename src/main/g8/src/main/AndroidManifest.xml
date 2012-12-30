@@ -1,12 +1,26 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="$package$">
 
-    <application
-        android:icon="@drawable/android:star_big_on"
-        android:label="@string/app_name"
-        android:debuggable="true">
+    <!--REMOVE THIS FOR PRODUCTION-->
+    <!--<uses-library android:name="scala_actors-2.9.1"/>-->
+    <!--<uses-library android:name="scala_collection-2.9.1"/>-->
+    <!--<uses-library android:name="scala_immutable-2.9.1"/>-->
+    <!--<uses-library android:name="scala_library-2.9.1"/>-->
+    <!--<uses-library android:name="scala_mutable-2.9.1"/>-->
+    <!-- END OF REMOVAL -->
 
-        <activity android:label="@string/app_name" android:name=".$main_activity$">
+    <uses-sdk 
+        android:minSdkVersion="10"
+        android:targetSdkVersion="$api_level$"/>
+
+    <application
+        android:icon="@drawable/android:ic_lock_airplane_mode"
+        android:label="@string/app_name"
+        android:allowBackup="true">
+
+        <activity 
+            android:label="@string/app_name" 
+            android:name=".$main_activity$">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -14,5 +28,4 @@
         </activity>
     </application>
 
-    <uses-sdk android:minSdkVersion="$api_level$"/>
 </manifest>
