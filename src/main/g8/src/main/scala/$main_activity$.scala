@@ -1,7 +1,7 @@
 package $package$
 
-import _root_.android.app.Activity
-import _root_.android.os.Bundle
+import android.app.Activity
+import android.os.Bundle
 
 class $main_activity$ extends Activity with TypedActivity {
   override def onCreate(savedInstanceState: Bundle) {
